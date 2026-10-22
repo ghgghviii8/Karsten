@@ -1,7 +1,7 @@
 '''
 flightplan.py – Drone Flight Plan GUI
 Generates KMZ (DJI waypoints with turns) + PDF flight plan
-Requirement: pip install fpdf2
+Requirement: fpdf2, pyproj (see environment.yml)
 
 Methane measurement – DJI M400 – EU A1/A3 Open Category
 Lawnmower pattern with 90-degree turns, configurable
@@ -14,7 +14,7 @@ ARCHITECTURE:
     Geometry           – lat/lon ↔ meters (local tangent plane)
     Polygon validation – simple polygon check (no self-intersection)
     Rectangle finding  – bounding box in rotated coords
-    Route generation   – lawnmower + 90-degree turns + return to start
+    Route generation   – lawnmower + 90-degree turns + configurable extensions
     Convex Hull        – Andrew's monotone chain
     Safety check       – A3 building distances (Overpass API)
     Airspace check     – no-fly zones via OSM (Overpass API)
